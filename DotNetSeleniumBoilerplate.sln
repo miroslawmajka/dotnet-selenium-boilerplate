@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetSeleniumBoilerplate", "DotNetSeleniumBoilerplate.csproj", "{D3D3346F-4A1C-46EE-9E9E-11E888257165}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CircleCI", "CircleCI", "{559DD204-B673-41C4-9B73-C61CD98220C2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CircleCI", "CircleCI", "{7F7D65DA-A963-4F36-8C73-060C74F86300}"
 	ProjectSection(SolutionItems) = preProject
 		.circleci\config.yml = .circleci\config.yml
 	EndProjectSection
