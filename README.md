@@ -2,6 +2,8 @@
 
 .NET Selenium Boilerplate
 
+Circle CI Build Status: [![CircleCI](https://circleci.com/gh/miroslawmajka/dotnet-selenium-boilerplate.svg?style=svg)](https://circleci.com/gh/miroslawmajka/dotnet-selenium-boilerplate)
+
 # WebDrivers
 
 Download the correct executable and put in your system PATH.
