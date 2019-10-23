@@ -1,16 +1,18 @@
-﻿using OpenQA.Selenium;
+﻿using DotNetSeleniumBoilerplate.Model;
+using OpenQA.Selenium;
 
 namespace DotNetSeleniumBoilerplate.PageObjects
 {
     public abstract class Page
     {
         protected IWebDriver Driver { get; private set; }
-        protected abstract string BaseUrl { get; }
-        protected virtual string UrlPath => "";
+        protected string BaseUrl { get; private set; }
+        protected virtual string UrlPath => string.Empty;
 
-        public Page(IWebDriver webDriver)
+        public Page(SeleniumConfig config)
         {
-            Driver = webDriver;
+            Driver = config.Driver;
+            BaseUrl = config.BaseUrl;
         }
 
         public Page Open()

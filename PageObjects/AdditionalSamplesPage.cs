@@ -1,10 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using DotNetSeleniumBoilerplate.Model;
 
 namespace DotNetSeleniumBoilerplate.PageObjects
 {
     class AdditionalSamplesPage: SampleExpressAppPage
     {
-        public AdditionalSamplesPage(IWebDriver webDriver): base(webDriver)
+        public AdditionalSamplesPage(SeleniumConfig config) : base(config)
         {
 
         }

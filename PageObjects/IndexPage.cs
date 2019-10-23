@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using DotNetSeleniumBoilerplate.Model;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 
@@ -8,7 +9,7 @@ namespace DotNetSeleniumBoilerplate.PageObjects
     {
         private string MORE_TEXT_BUTTON_SELECTOR = "#btnShowMoreText";
 
-        public IndexPage(IWebDriver webDriver): base(webDriver)
+        public IndexPage(SeleniumConfig config): base(config)
         {
 
         }

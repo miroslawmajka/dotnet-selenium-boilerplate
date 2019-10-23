@@ -1,14 +1,12 @@
-﻿using OpenQA.Selenium;
+﻿using DotNetSeleniumBoilerplate.Model;
 
 namespace DotNetSeleniumBoilerplate.PageObjects
 {
     public class SampleExpressAppPage : Page
     {
-        protected override string BaseUrl => "http://localhost:3000";
-
-        public SampleExpressAppPage(IWebDriver webDriver): base(webDriver)
+        public SampleExpressAppPage(SeleniumConfig config): base(config)
         {
-
+            // TODO: add basic navigation logic
         }
     }
 }
