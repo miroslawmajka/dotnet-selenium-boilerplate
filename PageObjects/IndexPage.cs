@@ -7,20 +7,18 @@ namespace DotNetSeleniumBoilerplate.PageObjects
 {
     public class IndexPage : SampleExpressAppPage
     {
-        private string MORE_TEXT_BUTTON_SELECTOR = "#btnShowMoreText";
+        private readonly string MORE_TEXT_BUTTON_SELECTOR;
 
-        public IndexPage(SeleniumConfig config): base(config)
+        public IndexPage(SeleniumTestConfig config): base(config)
         {
-
+            MORE_TEXT_BUTTON_SELECTOR = "#btnShowMoreText";
         }
 
         public IndexPage ClickMoreTextButton()
         {
-            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
-
             IWebElement moreTextButton = null;
 
-            wait.Until(d =>
+            GetWaitForSeconds(5).Until(d =>
             {
                 moreTextButton = d.FindElement(By.Id(MORE_TEXT_BUTTON_SELECTOR));
 

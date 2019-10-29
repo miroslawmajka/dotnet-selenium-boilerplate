@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: microsoft/dotnet:2-sdk
+      - image: microsoft/dotnet:2-sdk-node-browsers
     steps:
         - checkout
         - run:
@@ -13,7 +13,8 @@ jobs:
             name: Build Solution
             command:
                 dotnet build
-#        - run:
-#            name: Test Solution
-#            command:
-#                dotnet test
+        - run: cp Environments/local-headless-chrome.env .env
+        - run: npm install -g sample-express-app
+        - run:
+            name: Start Sample Express App in the background and run Selenium tests
+            command: (sample-express-app > express.log &) && dotnet test

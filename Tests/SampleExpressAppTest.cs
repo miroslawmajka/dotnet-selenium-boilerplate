@@ -10,7 +10,7 @@ namespace DotNetSeleniumBoilerplate.Tests
 {
     public abstract class SampleExpressAppTest
     {
-        protected SeleniumConfig Config { get; private set; }
+        protected SeleniumTestConfig TestConfig { get; private set; }
 
         public SampleExpressAppTest()
         {
@@ -20,7 +20,7 @@ namespace DotNetSeleniumBoilerplate.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            Config = new SeleniumConfig
+            TestConfig = new SeleniumTestConfig
             {
                 Driver = GetDriver(Environment.GetEnvironmentVariable("BROWSER")),
                 BaseUrl = Environment.GetEnvironmentVariable("BASE_URL")
@@ -30,15 +30,29 @@ namespace DotNetSeleniumBoilerplate.Tests
         [TestCleanup]
         public void TestCleanup()
         {
-            Config.Driver.Quit();
+            TestConfig.Driver.Quit();
         }
 
         private IWebDriver GetDriver(string browserName)
         {
             // TODO: implement map with defined browsers
             //var edgeDriver = new EdgeDriver();
+            
+            var chromeOptions = new ChromeOptions();
 
-            return new ChromeDriver();
+            bool isHeadlessChromeParsed;
+
+            bool.TryParse(Environment.GetEnvironmentVariable("HEADLESS_CHROME"), out isHeadlessChromeParsed);
+
+            if (isHeadlessChromeParsed)
+            {
+                chromeOptions.AddArguments(new string[] {
+                    "--headless",
+                    "--disable-gpu"
+                });
+            }
+
+            return new ChromeDriver(chromeOptions);
         }
     }
 }

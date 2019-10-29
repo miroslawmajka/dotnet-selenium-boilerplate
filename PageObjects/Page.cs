@@ -1,5 +1,7 @@
 ﻿using DotNetSeleniumBoilerplate.Model;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace DotNetSeleniumBoilerplate.PageObjects
 {
@@ -9,7 +11,7 @@ namespace DotNetSeleniumBoilerplate.PageObjects
         protected string BaseUrl { get; private set; }
         protected virtual string UrlPath => string.Empty;
 
-        public Page(SeleniumConfig config)
+        public Page(SeleniumTestConfig config)
         {
             Driver = config.Driver;
             BaseUrl = config.BaseUrl;
@@ -20,6 +22,11 @@ namespace DotNetSeleniumBoilerplate.PageObjects
             Driver.Navigate().GoToUrl($"{BaseUrl}/{UrlPath}");
 
             return this;
+        }
+
+        protected WebDriverWait GetWaitForSeconds(double seconds)
+        {
+            return new WebDriverWait(Driver, TimeSpan.FromSeconds(seconds));
         }
     }
 }

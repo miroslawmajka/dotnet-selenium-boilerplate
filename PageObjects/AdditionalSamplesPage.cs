@@ -4,7 +4,7 @@ namespace DotNetSeleniumBoilerplate.PageObjects
 {
     class AdditionalSamplesPage: SampleExpressAppPage
     {
-        public AdditionalSamplesPage(SeleniumConfig config) : base(config)
+        public AdditionalSamplesPage(SeleniumTestConfig config) : base(config)
         {
 
         }

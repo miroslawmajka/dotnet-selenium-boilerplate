@@ -2,7 +2,7 @@
 
 namespace DotNetSeleniumBoilerplate.Model
 {
-    public class SeleniumConfig
+    public class SeleniumTestConfig
     {
         public IWebDriver Driver { get; set; }
         public string BaseUrl { get; set; }

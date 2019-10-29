@@ -4,7 +4,7 @@ namespace DotNetSeleniumBoilerplate.PageObjects
 {
     public class SampleExpressAppPage : Page
     {
-        public SampleExpressAppPage(SeleniumConfig config): base(config)
+        public SampleExpressAppPage(SeleniumTestConfig config): base(config)
         {
             // TODO: add basic navigation logic
         }
